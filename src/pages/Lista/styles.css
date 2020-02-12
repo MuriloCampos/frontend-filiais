@@ -1,0 +1,26 @@
+ul.lista-filiais {
+    width: 100%;
+    list-style: none;
+    display: flexbox;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+ul.lista-filiais li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+    background-color: rgb(230, 224, 224);
+}
+
+ul.lista-filiais strong {
+    margin-top: 10px;
+    font-size: 24px;
+    color: rgb(97, 96, 96)
+}
+
+img {
+    width: 15px;
+    height: 15px;
+}
