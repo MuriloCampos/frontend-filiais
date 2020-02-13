@@ -19,6 +19,13 @@ export default function EditaFilial ({ history }){
             const AuthStr = 'Bearer '.concat(token);
             const response = await api.get('/filiais/'.concat(id), { headers: { Authorization: AuthStr } });
             setFilial(response.data);
+            setNome(response.data.nome);
+            setCidade(response.data.cidade);
+            setCnpj(response.data.cnpj);
+            setEndereco(response.data.endereco);
+            setEmail(response.data.email);
+            setLatitude(response.data.latitude);
+            setLongitude(response.data.longitude);
         }
         carregaFilial();
     }, []);

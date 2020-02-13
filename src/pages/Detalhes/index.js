@@ -13,13 +13,12 @@ const Detalhes = () => {
             const AuthStr = 'Bearer '.concat(token);
             const response = await api.get('/filiais/'.concat(id), { headers: { Authorization: AuthStr } });
             setFilial(response.data);
-            localStorage.setItem('latFilial', filial.latitude);
-            localStorage.setItem('lngFilial', filial.longitude);
+            //localStorage.setItem('latFilial', filial.latitude);
+            //localStorage.setItem('lngFilial', filial.longitude);
         }
         carregaFilial();
     }, []);
-
-    
+    console.log(filial);
     return (
         <>
             <div className="detalhesFilial">
@@ -28,8 +27,10 @@ const Detalhes = () => {
                 <label>CNPJ: {filial.cnpj}</label>
                 <label>Endereço: {filial.endereco}</label>
                 <label>E-mail: {filial.email}</label>
+                <label>Latitude: {filial.latitude}</label>
+                <label>Longitude: {filial.longitude}</label>
             </div>
-            <SimpleMap/>
+            <SimpleMap latitude={filial.latitude} longitude={filial.longitude}/>
         </>
     );
 }
