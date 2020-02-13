@@ -13,6 +13,8 @@ const Detalhes = () => {
             const AuthStr = 'Bearer '.concat(token);
             const response = await api.get('/filiais/'.concat(id), { headers: { Authorization: AuthStr } });
             setFilial(response.data);
+            localStorage.setItem('latFilial', filial.latitude);
+            localStorage.setItem('lngFilial', filial.longitude);
         }
         carregaFilial();
     }, []);
